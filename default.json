@@ -9,6 +9,7 @@
     }
   ],
   "vulnerabilityAlerts": {
-    "enabled": true
+    "enabled": true,
+    "labels": ["Security"]
   }
 }
