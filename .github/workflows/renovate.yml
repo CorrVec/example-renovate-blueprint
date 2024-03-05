@@ -2,14 +2,14 @@ name: Renovate
 on:
   workflow_call:
     inputs:
-      token:
-        description: "Authentication token"
-        required: true
-        type: string
       configurationFile:
         description: "Configuration file"
         required: true
         type: string
+    secrets:
+      token:
+        description: "Authentication token"
+        required: true
 concurrency: renovate
 jobs:
   renovate:
