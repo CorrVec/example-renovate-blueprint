@@ -1,6 +1,12 @@
 name: Renovate
 on:
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      token:
+        description: "Authentication token"
+        required: true
+        type: string
+concurrency: renovate
 jobs:
   renovate:
     runs-on: ubuntu-latest
@@ -18,4 +24,4 @@ jobs:
           RENOVATE_GIT_AUTHOR: "Renovate Bot <bot@renovateapp.com>"
         with:
           configurationFile: ".github/renovate.json"
-          token: ${{ secrets.RENOVATE_TOKEN }}
+          token: ${{ inputs.token }}
