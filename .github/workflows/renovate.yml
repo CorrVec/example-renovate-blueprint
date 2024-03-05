@@ -26,4 +26,4 @@ jobs:
           RENOVATE_ONBOARDING: "false"
         with:
           configurationFile: ${{ inputs.configurationFile }}
-          token: ${{ inputs.token }}
+          token: ${{ secrets.token }}
