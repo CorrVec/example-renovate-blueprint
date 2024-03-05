@@ -6,6 +6,10 @@ on:
         description: "Authentication token"
         required: true
         type: string
+      configurationFile:
+        description: "Configuration file"
+        required: true
+        type: string
 concurrency: renovate
 jobs:
   renovate:
