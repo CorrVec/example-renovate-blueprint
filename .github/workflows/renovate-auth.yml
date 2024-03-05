@@ -17,7 +17,7 @@ jobs:
         uses: renovatebot/github-action@v40.1.1
         env:
           # Repository taken from variable to keep configuration file generic
-          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          RENOVATE_REPOSITORIES: "CorrVec/selfcare-ms-core, CorrVec/selfcare-dashboard-frontend, CorrVec/io-developer-portal-frontend"
           # Onboarding not needed for self hosted
           RENOVATE_ONBOARDING: "false"
         with:
