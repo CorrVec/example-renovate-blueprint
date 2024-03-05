@@ -1,0 +1,25 @@
+name: Renovate
+on:
+  workflow_call:
+    inputs:
+      configurationFile:
+        description: "Configuration file"
+        required: true
+        type: string
+concurrency: renovate
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v40.1.1
+        env:
+          # Repository taken from variable to keep configuration file generic
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          # Onboarding not needed for self hosted
+          RENOVATE_ONBOARDING: "false"
+        with:
+          configurationFile: ${{ inputs.configurationFile }}
+          token: ${{ secrets.RENOVATE_TOKEN_BLUEPRINT }}
