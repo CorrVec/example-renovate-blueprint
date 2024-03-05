@@ -6,6 +6,10 @@ on:
         description: "Configuration file"
         required: true
         type: string
+    secrets:
+      token:
+        description: "Authentication token"
+        required: true
 concurrency: renovate
 jobs:
   renovate:
@@ -20,4 +24,4 @@ jobs:
           RENOVATE_ONBOARDING: "false"
         with:
           configurationFile: ${{ inputs.configurationFile }}
-          token: ${{ secrets.RENOVATE_TOKEN_BLUEPRINT }}
+          token: ${{ secrets.token }}
